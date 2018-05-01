@@ -1,0 +1,145 @@
+package Swing;
+
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Group.Hclasses;
+import Items.Book;
+import Items.Dagger;
+import Items.Potion;
+import Items.Relic;
+import Items.Staff;
+import Items.Sword;
+import Items.Types;
+import Setup.Game;
+import Setup.Save;
+
+public class Login extends JFrame implements ActionListener{
+
+	private JButton exit;
+	private JLabel user;
+	private JTextField name;
+	private JButton login;
+	private JPanel logIn;
+	private JButton delete;
+	public Login(){
+		super("Login Window");
+		build();
+		content();
+		finalStuff();
+	}
+
+
+
+
+
+	private void build() {
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Dimension d = new Dimension(200, 100);
+		this.setPreferredSize(d);
+		logIn = new JPanel();		
+	}
+	private void content() {
+		exit = new JButton("Exit");
+		login = new JButton("Login");
+		delete = new JButton("Delete");
+		user = new JLabel("Username");		
+		name = new JTextField(5);
+		exit.addActionListener(this);
+		login.addActionListener(this);
+		name.addActionListener(this);
+		delete.addActionListener(this);
+
+		logIn.add(user);
+		logIn.add(name);
+		logIn.add(login);		
+		logIn.add(delete);		
+	}
+	private void finalStuff() {
+		exit.addActionListener(this);
+		logIn.add(exit);
+		this.add(logIn);
+		this.pack();
+		this.setLocation(1920/2 -(this.getWidth()), 1080/2 - (this.getHeight()));
+		this.setVisible(true);		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == exit){
+			this.dispose();
+		}
+		if(e.getSource() == delete){
+			String text = name.getText() + ".txt";
+			File f = new File(text);
+			Path p = f.toPath();
+			try {
+				if(Files.deleteIfExists(p)){
+					BasicWindow alert = new BasicWindow("Save Deleted");
+				}else{
+					BasicWindow alert = new BasicWindow("User Invalid");
+				}
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		if(e.getSource() == login){
+			if(fileCheck(name.getText())){
+			}
+			this.dispose();
+		}
+	}
+	public static void main(String[] args) {
+		Login log = new Login();
+	}
+	private boolean fileCheck(String text) {
+
+
+		try {
+			File f = new File(text + ".txt");
+			if (f.exists()) {
+				FileInputStream load = new FileInputStream(f);
+				ObjectInputStream output = new ObjectInputStream(load);
+				Akatar game = (Akatar)output.readObject();
+				Akatar.f = f; 
+				game.create();
+				output.close();
+				
+			}else{
+				FileOutputStream create = new FileOutputStream(text + ".txt");
+				ObjectOutputStream output = new ObjectOutputStream(create);
+				output.writeObject(Akatar.game);
+				output.close();
+			}
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		return false;
+	}
+}

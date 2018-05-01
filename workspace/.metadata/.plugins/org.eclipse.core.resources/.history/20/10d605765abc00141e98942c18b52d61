@@ -1,0 +1,27 @@
+package as;
+
+import java.util.Scanner;
+
+public class solution {
+
+	static Scanner input = new Scanner(System.in);
+	public static void main(String[] args) {
+		System.out.println("Enter in form of x,y,z");
+		String numbers = input.nextLine();
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		int t = 0;
+		numbers.replaceAll(" ", "");
+		String[] array = numbers.split(",");
+		x = Integer.parseInt(array[0]);
+		y = Integer.parseInt(array[1]);
+		z = Integer.parseInt(array[2]);
+		for(;x<y;x+=z){
+			t++;
+		}
+		System.out.println("steps: " + t);
+	}
+	
+
+}

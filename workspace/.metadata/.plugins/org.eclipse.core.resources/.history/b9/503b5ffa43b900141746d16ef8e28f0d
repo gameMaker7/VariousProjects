@@ -1,0 +1,56 @@
+package Quests;
+
+import Items.Dagger;
+import Items.Gen;
+import Items.Items;
+import Items.Scroll;
+
+public enum QuestNames {
+	QuestOne, QuestTwo;
+	public String questName(){
+		String name = null;
+		int x = Gen.gen.nextInt(SearchNames.values().length);
+		SearchNames n = SearchNames.randomName();
+		switch(this){
+		case QuestOne:
+			name = "Find" + n.toString();
+			break;
+		case QuestTwo:
+			name = "Kevin Jabar";
+			break;
+		default:
+			break;
+
+		}
+		return name;
+
+	}
+	public String questType(){
+		String name = null;
+		switch(this){
+		case QuestOne:
+			name = "rescue";
+			break;
+		case QuestTwo:
+			name = "Kevin Jabar";
+		default:
+			break;
+
+		}
+		return name;
+
+	}
+	public Items questReward(){
+		Items item = null;
+		switch(this){
+		case QuestOne:
+			item = new Dagger("Hero's Bane", true);
+			break;
+		case QuestTwo:
+			item = new Scroll("Compensation", true);
+		default:
+			break;
+		}
+		return item;
+	}
+}

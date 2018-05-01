@@ -1,0 +1,13 @@
+/**
+ * Created by Denver on 2/3/2016.
+ */
+
+public class Piece{
+    MoveTypes[] moves = new MoveTypes[3];
+    String color;
+    String abbreviation;
+    Piece(String color, String abbrev){
+        this.color = color;
+        this.abbreviation = abbrev;
+    }
+}

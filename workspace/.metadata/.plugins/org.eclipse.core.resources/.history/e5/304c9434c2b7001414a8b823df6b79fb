@@ -1,0 +1,50 @@
+package sim;
+
+
+
+public class SmartCar extends Warp implements TrafficControl{	
+	protected int maxSpeed = TrafficInfo.getBlueSpeedMax();
+	private int offset = 5;
+	private int choose = 0;
+	private static int blocks = 0;
+	private static int crashes = 0;
+	private static int[] turns = new int[2];
+	protected int length = TrafficWorld.WORLDWIDTH - offset;
+	protected int width = TrafficWorld.WORLDHEIGHT - offset;
+
+
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public static int getCrashes() {
+		return crashes;
+	}
+	public SmartCar(Direction direction, int i){
+		super(direction, i);
+		this.setImage("images/topCarBlue.png");
+
+	}
+	private void desSearch(Intersection i, Intersection dest) {
+		Direction state;
+		if(i.des)return;
+		this.desDir.add(Direction.LEFT);
+		
+		desSearch(x, dest);
+		
+	}
+	@Override
+	public void crashes() {
+		crashes++;		
+	}
+	@Override
+	public void blocks() {
+		blocks++;		
+	}
+	public static int getBlocks() {
+		return blocks;
+	}
+
+}

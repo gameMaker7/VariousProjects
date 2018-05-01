@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;recursion.Node.key&apos; in &apos;recursion.Node&apos;&#x0D;&#x0A;- Original project: &apos;Oop_Drills&apos;&#x0D;&#x0A;- Original element: &apos;recursion.Node.key&apos;&#x0D;&#x0A;- Getter method name: &apos;getKey&apos;&#x0D;&#x0A;- Setter method name: &apos;setKey&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;key&apos;" flags="589830" getter="getKey" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;recursion{Node.java[Node^key" insertion="5" setter="setKey" stamp="1424213378471" version="1.0" visibility="1"/>
+</session>

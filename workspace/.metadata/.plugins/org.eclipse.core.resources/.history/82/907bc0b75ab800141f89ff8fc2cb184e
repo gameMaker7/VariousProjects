@@ -1,0 +1,57 @@
+package Quests;
+
+import Items.Gen;
+import Items.Items;
+import Swing.BasicWindow;
+import Swing.QuestWindow;
+
+public class Ruins extends Dungeons {
+	private static final long serialVersionUID = 9040242818754332567L;
+
+	private boolean guessingGame = false;
+	private boolean questionGame = false;
+	private boolean pain = false;
+
+	public Mountains(String name, int level, Items reward, String type) {
+		super(name, level, reward, type);
+	}
+
+	@Override
+	public void run() {
+		switch(type){
+		case "rescue":
+			rescue();
+			break;
+		case "Kevin Jabar":
+			kevin();
+			break;
+		}
+	}
+
+	private void kevin() {
+		gameCheck();
+		if(guessingGame){
+			QuestWindow quest = new QuestWindow(true, this);
+		}else if(questionGame){
+			QuestWindow.jabar();
+			QuestWindow quest = new QuestWindow(0, this);
+		}else if(pain){
+			BasicWindow quest = new BasicWindow("Kevin is sitting on an old pillar however when you try to sit next to him you discover it is a witch disguised as him.");
+		}
+	}
+
+	private void gameCheck() {
+
+		int a = Gen.gen.nextInt(3);
+		if(a == 0)pain = true;
+		if(a == 1)questionGame = true;
+		if(a == 2)guessingGame = true;
+	}
+
+
+	private void rescue() {
+		System.out.println("Beneath a crumling pillar you find fred");
+
+	}
+
+}

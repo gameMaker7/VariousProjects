@@ -1,0 +1,42 @@
+room one = Entrance Chanmber
+	room contains (rope, lantern and stairs)
+		rope is hidden in a closet
+		lantern is on a wall
+		stairs are at far end of room
+		
+room two = Armory
+	room contains (sword, axe, staff) (armmor and key) (hole in the wall which leads to next level)
+		weapons are in chest only tkae one
+		armor is on display
+		key is on hook
+		
+room three = dark chamber
+	if lantern is not in inventory sight is unavaible
+	room contains (Large spider, spear and ring)
+		ring is on spider
+		spear is found if spider attacks player
+		spider is unavoidable and will attack player if in dark	
+			player gets first hit if lanternis used
+		
+room four = Throne room
+	room contains (Throne chair which opens secret door) (ghost that will inform plyer of hidden room if they don't attack it) (King's dhield)
+		sield is in center of room
+		ghost is iding behind throne
+		throne is at back of room
+		secret door opens in center of room requires ring
+		hidden door is hidden behind a wall ghost will unlock it for player
+		
+secret chamber 
+	room cotains healing waters 
+	
+hidden room
+	room contains Scroll of life
+		
+Final room = Vualt
+	to open vualt a rope is used to pull lock down requires key
+	next read scroll
+	door will open but woodeen beams block passage destroy them with eapon
+	entry to vualt accepted
+	
+	vualt contains (royal crown and exit)
+	if player takes anything but the royal crown outside the exit they lose

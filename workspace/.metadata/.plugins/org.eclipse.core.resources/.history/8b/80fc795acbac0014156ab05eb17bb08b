@@ -1,0 +1,25 @@
+package Setup;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+import Items.Items;
+import Items.Store;
+
+public class Load {
+	static FileReader load;
+		public static void loadShop(Store shop){
+			try{
+				save.write(shop.length()+ "\n");
+				for(Items b: shop.getList()){
+					save.write(b.getName() + "\n");
+					save.write(b.getType() + "\n");
+					save.write(b.getRank() + "\n");
+					save.write(b.getValue() + "\n");
+					save.write(b.getWieght() + "\n");	
+					}
+				}catch(IOException e){
+					
+				}
+		}
+}

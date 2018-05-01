@@ -1,0 +1,25 @@
+#BlueJ package file
+package.editor.height=400
+package.editor.width=560
+package.editor.x=30
+package.editor.y=30
+package.numDependencies=0
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
+readme.editor.height=700
+readme.editor.width=900
+readme.editor.x=0
+readme.editor.y=0
+target1.height=62
+target1.name=DungeonMangager
+target1.type=PackageTarget
+target1.width=130
+target1.x=10
+target1.y=90
+target2.height=62
+target2.name=Monsters
+target2.type=PackageTarget
+target2.width=80
+target2.x=160
+target2.y=10

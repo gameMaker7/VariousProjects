@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Denver on 2/3/2016.
+ */
+
+public class Piece{
+    MoveTypes[] moves = new MoveTypes[3];
+    String color;
+    String abbreviation;
+    ArrayList<String> moveSet = new ArrayList<>();
+    boolean hasMoved = false;
+    Piece(String color, String abbrev){
+        this.color = color;
+        this.abbreviation = abbrev;
+    }
+
+    public void CreatePossibleMoves(String location, Board board){
+        char currentLetterValue = location.charAt(0);
+        int currentNumberValue = Integer.valueOf(location.substring(1));
+        for (int i = 0; i < moves.length; ++i){
+            switch (moves[i]){
+                case PawnMove:
+                    if(color == "White")
+                    {
+                        String s = "" + currentLetterValue+(currentNumberValue+1);
+                        moveSet.add(s);
+                    }
+                    if(color == "Black")
+                    {
+                        String s = "" + currentLetterValue+(currentNumberValue-1);
+                        moveSet.add(s);
+                    }
+                     break;
+                case KingMove:
+
+                   break;
+                case InfiniteDiagonal:
+                    break;
+                case InfiniteLine:
+                    break;
+                case KnightFar:
+                   break;
+                case KnightWide:
+                    break;
+                case PawnDouble:
+                    break;
+                case PawnKill:
+                    break;
+                case Castle:
+                    break;
+                default:
+                    break;
+            }
+        }
+        return false;
+    }
+}

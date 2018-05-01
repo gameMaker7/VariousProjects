@@ -1,0 +1,82 @@
+Dungeon Generator
+	Center Core room
+	side checks for room
+	if checks true create new room
+	Lmit creation zone
+	begining monster spawns possible
+	
+	number of rooms possible 
+		more rooms = better/more traps at start (based on time resources )
+		more waves
+		greater end score
+	Types of rooms
+		Corridor: Hallway which will connect rooms (possibly generated after rooms are built and not cosidered actual rooms)
+		Basic Room: small room which will have one trap tile single lane of movement straight through room can only be connected straightway)
+		Advanced Room: larger room which contains two trap tiles one of which can be upgraded into a large trap tile, connects in a L fasion might have two lanes of movement)
+		Narrow Room: Simple bridge across a pit will have trap tiles or interactive obstacle based on time
+		Workshop: medium room which contains one large trap tile (time based could produce energy for interactive obstacles or resources for upgrading traps) 
+		Healing Room: will have one large trap tile can regenerate enemy health (based on time may be altered to allow player to revive core life)
+		Monster Spawner: Player cannot create traps in this zone enemy monsters spawn here based on the number of spawners 
+			enemies will spawn in greater numbers in spawners farther from core) ( based on time may be possible to prioritize spawners to funnel monsters into certain areas)
+		Blockade: Large room which has two trap tiles and one large trap tile 
+			(based on time this may become a interactive obstacle such as a slow spell(decrease speed of enemies within range),
+			buff tower(increases effectiveness of other towers in range) or wall which enemies have to break)
+		Empty Zone: This area hs no trap potential (based on time may be possible to create seals which enemies must destroy to attack core)
+		Intersection: these rooms have a large trap tile and can lead to multiple possible channels (based on time may allow player to use these to change dungeon layout at game start)
+		AutoSentry: Has no trap tiles but has a automatic trap which attacks enemies (Based on time may become interactive)
+		
+		Interactive: Energy based obstacles that can be activated with a limited duration based on mouse click or key press 
+	Traps 
+		Room slots vs Free place
+		Max slots in each room
+		traps have difrent sizes (normal, large)
+		More traps each wave (or if time premits resources used to upgrade or buy traps) 
+		Traps have area of effect ( getObjectsInRange(int radius, java.lang.Class cls))
+		Traps deal instant kills with cooldown timers ( based on time and preferance may change to damage based)
+		Based on time Traps have charges which will run out and cannot be repleneshed during waves bt can be restored during build phase 
+		Upgrading trap slot is simply scaling slot image to a larger size
+			traps check if size of image is normal or large based on the type of trap
+		
+		
+	Monsters
+		single type of enemies (possibly more based on time)
+		Goblins are normal (first type)
+		Wraiths are immune to physical traps
+		Rats come in large swarms but stick together in clusters
+		Stat increases vs more monsters each wave
+		monsters reach core, do damage to core
+		
+	Bosses
+		Powerful versions of normal monsters or capable of removing traps that are in cooldown
+
+		
+		
+Priority
+	generating dungeon which contains one core and at least one monster spawner 
+	dungeon connects correctly 
+	create system which allows enemies to walk through dungeon
+	build system which will add trap tiles into monster walkway
+	Create boss waves
+	add score system
+	--------------------------------
+	Basic project finished
+	--------------------------------
+	decide if we use trap charge system
+	decide if we will use resource system
+	decide if we allow player construction of corridors
+	Build empty zone seals
+	decide if we will use energy system
+		build blockade obstacle
+		build narrow room obstacle
+	 	build healing room systems
+	 	build auto sentry systems
+	Decide if we use other enemy types
+		create other types of enemies or special versions of current monster type
+	improve UI
+		mouse over traps to get charges
+		mouse over wave counter to get number of enemies left
+		add various difficulties 
+			more enemies
+			less traps
+			more cores one core death is still game over
+		Make stand alone

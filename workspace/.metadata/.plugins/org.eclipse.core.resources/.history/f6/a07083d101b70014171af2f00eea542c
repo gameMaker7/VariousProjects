@@ -1,0 +1,103 @@
+package Swing;
+
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Group.Hclasses;
+import Items.Book;
+import Items.Dagger;
+import Items.Potion;
+import Items.Relic;
+import Items.Staff;
+import Items.Sword;
+import Items.Types;
+import Setup.Game;
+
+public class CreateUser extends JFrame implements ActionListener{
+
+	private JButton exit;
+	private JLabel user;
+	private JLabel password;
+	private JTextField name;
+	private JTextField passCode;
+	private JButton login;
+	public CreateUser(){
+		super("Login Window");
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Dimension d = new Dimension(200, 100);
+		this.setPreferredSize(d);
+		JPanel itemBuilder = new JPanel();
+
+		exit = new JButton("Exit");
+		login = new JButton("Login");
+		user = new JLabel("Username");		
+		password = new JLabel("Username");	
+		name = new JTextField(5);
+		passCode = new JTextField(5);
+		exit.addActionListener(this);
+		name.addActionListener(this);
+
+		itemBuilder.add(user);
+		itemBuilder.add(name);
+		itemBuilder.add(password);
+		itemBuilder.add(passCode);
+		itemBuilder.add(exit);
+		itemBuilder.add(login);
+		this.add(itemBuilder);
+
+		this.pack();
+		this.setLocation(1920/2 -(this.getWidth()), 1080/2 - (this.getHeight()));
+		this.setVisible(true);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == exit){
+			this.dispose();
+		}
+		if(e.getSource() == login){
+			fileCheck(name.getText());
+			this.dispose();
+		}
+	}
+	public static void main(String[] args) {
+		CreateUser log = new CreateUser();
+		Akatar.setGame(Akatar.getGame());
+	}
+	private void fileCheck(String text) {
+
+		try {
+			File f = new File(text + ".txt");
+			if (f.exists()) {
+				FileInputStream load = new FileInputStream(f);
+				ObjectInputStream output = new ObjectInputStream(load);
+				Akatar game = (Akatar)output.readObject();
+				Akatar.setGame(game);
+			}else{
+				CreateUser register = new CreateUser(text);
+			}
+		} catch (FileNotFoundException e) {
+			BasicWindow alert = new BasicWindow("User Invalid");
+		} catch (ClassNotFoundException e) {
+			BasicWindow alert = new BasicWindow("Class Invalid");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}

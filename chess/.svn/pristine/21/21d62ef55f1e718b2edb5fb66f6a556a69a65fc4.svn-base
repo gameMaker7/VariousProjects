@@ -1,0 +1,13 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+class Pawn extends Piece {
+
+    Pawn(String color, String abbrev) {
+        super(color, abbrev);
+        moves[0] = MoveTypes.PawnDouble;
+        moves[1] = MoveTypes.PawnKill;
+        moves[2] = MoveTypes.PawnMove;
+     }
+
+}

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TextureInfo.cpp">
+      <Filter>Info Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformInfo.cpp">
+      <Filter>Info Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometry.cpp">
+      <Filter>Shape Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeGen.cpp">
+      <Filter>Shape Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Lighting and Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Lighting and Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="RunGame.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Reader.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="GLWindow_moc.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="GLWindow.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWriter.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugSlider.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="debugSlider_moc.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="DT.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget_moc.cpp">
+      <Filter>Window Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Render Engine\BufferInfo.cpp">
+      <Filter>Render Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Render Engine\BufferManager.cpp">
+      <Filter>Render Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Render Engine\Renderable.cpp">
+      <Filter>Render Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Render Engine\RenderEngine.cpp">
+      <Filter>Render Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="LogWriter.cpp" />
+    <ClCompile Include="BMP_Loader.cpp">
+      <Filter>Info Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementController.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardController.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomWalker.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="Stalker_Walker.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="Orbitor.cpp">
+      <Filter>Contollers</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderInfo.cpp">
+      <Filter>Info Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextureInfo.h">
+      <Filter>Info Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformInfo.h">
+      <Filter>Info Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Shape Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeGen.h">
+      <Filter>Shape Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Lighting and Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Lighting and Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Shape Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="RunGame.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="GLWindow.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWriter.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Datamanager.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugSlider.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="DT.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Window Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="..\Render Engine\BufferInfo.h">
+      <Filter>Render Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Render Engine\BufferManager.h">
+      <Filter>Render Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Render Engine\Renderable.h">
+      <Filter>Render Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Render Engine\RenderEngine.h">
+      <Filter>Render Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="LogWriter.h" />
+    <ClInclude Include="BMP_Loader.h">
+      <Filter>Info Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementController.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardController.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomWalker.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="Stalker_Walker.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="Orbitor.h">
+      <Filter>Contollers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ShaderInfo.h">
+      <Filter>Info Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragShaderCode_Lighting.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="FragShaderCode_NoLighting_ColorTint.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="FragShaderCode_NoLighting_Texture.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="VertexShaderCode_Lighting.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="VertexShaderCode_NoLighting_Texture.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="VertexShaderCode_NoLighting_ColorTint.shader">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Info Classes">
+      <UniqueIdentifier>{f5ddb49c-4ef6-440c-be93-f5f13cf2912f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape Stuff">
+      <UniqueIdentifier>{dc06e671-2088-4934-911c-bd227e00798a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window Stuff">
+      <UniqueIdentifier>{520c6c6e-7d2c-4af7-bfd5-bd4480a43a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render Engine">
+      <UniqueIdentifier>{53d1d286-8904-4a18-9d87-f75692557380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lighting and Camera">
+      <UniqueIdentifier>{5f4b770c-81d5-44de-927b-24dc951c97b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contollers">
+      <UniqueIdentifier>{27a2ebbc-9dfb-46e2-bfa7-7e09478dc481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{5eafa813-4f74-420c-894a-b9a5ec554164}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Make stuff.rc" />
+  </ItemGroup>
+</Project>

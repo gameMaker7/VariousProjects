@@ -1,0 +1,10 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+public class King extends Piece{
+    King(String color, String abbrev) {
+        super(color, abbrev);
+        moves[0] = MoveTypes.KingMove;
+        moves[1] = MoveTypes.Castle;
+    }
+}

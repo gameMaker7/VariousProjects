@@ -1,0 +1,19 @@
+BEFORE THREADING
+-----------------------
+Allocated memory: 117 mb
+Serialize
+Serialization Took : 1798 ms
+DeSerialize
+Deserialization Took : 1544 ms
+Allocated memory: 558 mb
+-----------------------
+
+AFTER THREADING
+-----------------------
+Allocated memory: 117 mb
+Serialize
+Serialization Took : 1799 ms
+DeSerialize
+Deserialization Took : 621 ms
+Allocated memory: 521 mb
+-----------------------

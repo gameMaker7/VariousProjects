@@ -1,0 +1,9 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+public class Bishop extends Piece {
+    Bishop(String color, String abbrev) {
+        super(color, abbrev);
+        moves[0] = MoveTypes.InfiniteDiagonal;
+    }
+}

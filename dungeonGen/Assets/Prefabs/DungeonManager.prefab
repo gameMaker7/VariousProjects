@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1347397806171486}
+  m_IsPrefabParent: 1
+--- !u!1 &1347397806171486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4044073267729430}
+  - component: {fileID: 114978998836426538}
+  m_Layer: 0
+  m_Name: DungeonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4044073267729430
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347397806171486}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114978998836426538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347397806171486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b453cda90dd8464582d93916dfb50d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 32
+  generationStyle: 0
+  gridSize:
+    x: 30
+    z: 30
+  cellPrefab: {fileID: 114008546741021276, guid: 98ddd467dfef87d4ca5dae7c69797521,
+    type: 2}
+  generationStepDelay: 0.001
+  passagePrefab: {fileID: 114875065634587016, guid: 587e915f327f04f4984b59cd681ac6b8,
+    type: 2}
+  wallPrefabs:
+  - {fileID: 114297146791973610, guid: 772506f047d44764d9068364b4a9a094, type: 2}
+  doorPrefab: {fileID: 114016863198031796, guid: 83cba23fd9c8b6a488e0e2385bff5148,
+    type: 2}
+  roomSettings:
+  - floorMaterial: {fileID: 2100000, guid: 428d9dc3dc4dade41939d58a86c60c1e, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 422740a5e2a65f647ac3d7232000bee1, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: e8bde09acda36b544a41cf8d1d306c72, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 00aafc624a0b37649a15b0c2961e00eb, type: 2}
+  - floorMaterial: {fileID: 2100000, guid: 3f091387fb5c7dc4a959540e6deb69e8, type: 2}
+    wallMaterial: {fileID: 2100000, guid: 172c5eb2f52f8c942a4a6aef72fefc69, type: 2}
+  doorProbability: 0.05

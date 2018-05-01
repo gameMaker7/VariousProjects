@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Denver on 2/3/2016.
+ */
+
+public class Piece{
+    MoveTypes[] moves = new MoveTypes[3];
+    String color;
+    String abbreviation;
+    ArrayList<String> moveSet = new ArrayList<>();
+    boolean hasMoved = false;
+    Piece(String color, String abbrev){
+        this.color = color;
+        this.abbreviation = abbrev;
+    }
+
+    public Board CreatePossibleMoves(String location, Board board) {
+        return null;
+    }
+
+    protected boolean AddMove(String s, Board board) {
+        char currentLetterValue = s.charAt(0);
+        int currentNumberValue = Integer.valueOf(s.substring(1));
+        if(currentLetterValue > 'h' || currentLetterValue < 'a' || currentNumberValue > 8 || currentNumberValue < 1){
+            return false;
+        }
+        if(board.board.get(s) != null && board.board.get(s).color != color){
+            moveSet.add(s);
+            return false;
+        }else if(board.board.get(s) == null){
+            moveSet.add(s);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean CheckPossibleMoves(String location2) {
+        for (int i = 0; i < moveSet.size(); ++i){
+            String s = moveSet.get(i);
+            if(s.equals(location2)){
+                return true;
+            }
+        }
+        return false;
+    }
+}

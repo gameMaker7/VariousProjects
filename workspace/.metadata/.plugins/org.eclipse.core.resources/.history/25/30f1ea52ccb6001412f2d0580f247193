@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+
+public class Solution {
+
+	static Scanner input = new Scanner(System.in);
+	public static void main(String[] args) {
+		System.out.println("# of Stars");
+		int stars = input.nextInt();
+		int total = stars;
+		stars = 0;
+		int rows = 1;
+		int col = 0;
+		while(stars != total){
+			col++;
+			stars = col * rows;
+			if(stars == total){
+				System.out.println(col);
+				break;
+				}
+			rows++;
+			stars = col * rows;
+			if(stars == total){
+				System.out.println(col);
+				break;
+				}
+			if(stars>total){
+				rows--;
+			}
+		}
+	}
+}

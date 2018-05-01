@@ -1,0 +1,5 @@
+package sim;
+
+public enum Direction {
+NORTH, SOUTH, EAST, WEST, LEFT, RIGHT;
+}

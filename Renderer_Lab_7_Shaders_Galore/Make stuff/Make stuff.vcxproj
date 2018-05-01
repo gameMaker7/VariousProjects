@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Lab2colorfulstuff</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\glm;$(SolutionDir)..\Middleware\glew\include;$(SolutionDir)..\Middleware\Qt\include;$(SolutionDir)..\Make stuff\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Middleware\glew\lib;$(SolutionDir)..\Middleware\Qt\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glew32d.lib;glew32s.lib;glew32sd.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Render Engine\BufferInfo.cpp" />
+    <ClCompile Include="..\Render Engine\BufferManager.cpp" />
+    <ClCompile Include="..\Render Engine\Renderable.cpp" />
+    <ClCompile Include="..\Render Engine\RenderEngine.cpp" />
+    <ClCompile Include="BMP_Loader.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DebugSlider.cpp" />
+    <ClCompile Include="debugSlider_moc.cpp" />
+    <ClCompile Include="DT.cpp" />
+    <ClCompile Include="FileWriter.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="GLWindow.cpp" />
+    <ClCompile Include="GLWindow_moc.cpp" />
+    <ClCompile Include="KeyboardController.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LogWriter.cpp" />
+    <ClCompile Include="MovementController.cpp" />
+    <ClCompile Include="Orbitor.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RandomWalker.cpp" />
+    <ClCompile Include="Reader.cpp" />
+    <ClCompile Include="RunGame.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ShapeGen.cpp" />
+    <ClCompile Include="Stalker_Walker.cpp" />
+    <ClCompile Include="TextureInfo.cpp" />
+    <ClCompile Include="TransformInfo.cpp" />
+    <ClCompile Include="ShaderInfo.cpp" />
+    <ClCompile Include="Widget.cpp" />
+    <ClCompile Include="Widget_moc.cpp" />
+    <None Include="FragShaderCode_Lighting.shader" />
+    <None Include="FragShaderCode_NoLighting_ColorTint.shader" />
+    <None Include="VertexShaderCode_NoLighting_ColorTint.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Render Engine\BufferInfo.h" />
+    <ClInclude Include="..\Render Engine\BufferManager.h" />
+    <ClInclude Include="..\Render Engine\Renderable.h" />
+    <ClInclude Include="..\Render Engine\RenderEngine.h" />
+    <ClInclude Include="BMP_Loader.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Datamanager.h" />
+    <ClInclude Include="DebugSlider.h" />
+    <ClInclude Include="DT.h" />
+    <ClInclude Include="FileWriter.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="GLWindow.h" />
+    <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LogWriter.h" />
+    <ClInclude Include="MovementController.h" />
+    <ClInclude Include="Orbitor.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="RandomWalker.h" />
+    <ClInclude Include="Reader.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ShapeGen.h" />
+    <ClInclude Include="Stalker_Walker.h" />
+    <ClInclude Include="TextureInfo.h" />
+    <ClInclude Include="TransformInfo.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="ShaderInfo.h" />
+    <ClInclude Include="Widget.h" />
+    <ClInclude Include="RunGame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragShaderCode_NoLighting_Texture.shader" />
+    <None Include="VertexShaderCode_Lighting.shader" />
+    <None Include="VertexShaderCode_NoLighting_Texture.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Make stuff.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

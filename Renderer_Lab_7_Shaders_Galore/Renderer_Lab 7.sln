@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Make stuff", "Make stuff\Make stuff.vcxproj", "{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OBJConvertor", "OBJConvertor\OBJConvertor.vcxproj", "{0108DFF5-DD73-4CBA-B1AE-B42B6788AD43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73ADAF69-80DA-4598-AD01-656F74DBF269}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}.Debug|Win32.Build.0 = Debug|Win32
+		{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}.Release|Win32.ActiveCfg = Release|Win32
+		{3CF4E576-C8D9-4E04-AF76-84CAF4E8A29A}.Release|Win32.Build.0 = Release|Win32
+		{0108DFF5-DD73-4CBA-B1AE-B42B6788AD43}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0108DFF5-DD73-4CBA-B1AE-B42B6788AD43}.Debug|Win32.Build.0 = Debug|Win32
+		{0108DFF5-DD73-4CBA-B1AE-B42B6788AD43}.Release|Win32.ActiveCfg = Release|Win32
+		{0108DFF5-DD73-4CBA-B1AE-B42B6788AD43}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

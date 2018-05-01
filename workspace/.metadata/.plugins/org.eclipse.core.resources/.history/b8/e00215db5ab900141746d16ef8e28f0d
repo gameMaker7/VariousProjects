@@ -1,0 +1,178 @@
+package sim;
+
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import greenfoot.Actor;
+import greenfoot.World;
+
+public abstract class Car extends Actor implements TrafficControl{
+	static Random gen = new Random();
+	private static int car = gen.nextInt(4);
+	private int speed = gen.nextInt(5) + 1;
+	protected boolean move1;
+	protected Intersection go;
+	protected boolean move2;
+	protected int choose;
+	private boolean rotateL;
+	private boolean rotateR;
+	int W = this.getImage().getWidth() * 3;
+	int H = this.getImage().getHeight() * 3;
+	public Direction state = Direction.EAST;
+	private Direction turn;
+	protected ArrayList<Direction> desDir = new ArrayList<Direction>();
+	protected boolean start = false;
+
+	public Intersection getGo() {
+		return go;
+	}
+
+	public void enter(Intersection x){
+		go = x;
+		if(state == Direction.EAST || state == Direction.WEST){
+			switch(x.hState){
+			case RED: 
+				setSpeed(0);
+				move1 = true;
+				break;
+			default:
+				smartTurn(go);
+				break;
+			}
+		}
+
+		if(state == Direction.NORTH || state == Direction.SOUTH){
+			switch(x.vState){
+			case RED: 
+				setSpeed(0);
+				move2 = true;
+				break;
+			default:
+				smartTurn(go);
+				break;	
+			}
+		}
+	}	
+	//		protected void turning(Intersection intersection) {
+	//			intersection.left(this, this.desDir.get(0));
+	//		}
+
+	//	protected abstract void choose(Intersection x);
+	public static void createCar(int x, int y, World world, Direction direction, int i){
+		SmartCar car = new SmartCar(direction, i);
+		world.addObject(car, x, y); 
+//		car.desSearch((Intersection)car.getOneIntersectingObject(Intersection.class), TrafficWorld.destination);
+	}
+
+	protected void collision() throws Exception {
+		if(getWorld() != null && this.getOneIntersectingObject(Car.class) != null){
+			getWorld().addObject(new Explosion(), getX(), getY());
+			getWorld().removeObject(this);
+			crashes();
+			//throw new Exception();
+		}
+	}
+	protected abstract void move();
+	protected void forward(Intersection x){
+		if(move1){
+			if(go.hState == Light.GREEN){
+				setSpeed(1);
+				move1 = false;
+				smartTurn(x);
+
+
+			}
+		}
+		if(move2){
+			if(go.vState == Light.GREEN){
+				setSpeed(1);
+				move2 = false;	
+				smartTurn(x);
+
+			}
+		}
+	}
+
+
+	private void smartTurn(Intersection intersection) {
+		if(this.start ){
+			if(desDir.isEmpty()){
+				try {
+					getWorld().removeObject(this);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return;
+			}
+			
+			intersection.turnCars(this, this.desDir.get(0));
+			desDir.remove(0);
+		}
+	}
+	@Override
+	public void leaving() {
+		setRotateL(false);
+		setRotateR(false);
+		blocks();
+	}
+
+	@Override
+	public void approaching(Intersection x) {
+		if(state == Direction.EAST || state == Direction.WEST){
+			go = x;
+			switch(x.hState){
+			case YELLOW:
+				setSpeed(1);
+				move1 = true;
+				break;
+			case RED: 
+				setSpeed(1);
+				move1 = true;
+				break;
+			default:
+				break;
+			}
+		}
+		if(state == Direction.NORTH || state == Direction.SOUTH){
+			go = x;
+			switch(x.vState){
+			case YELLOW:
+				setSpeed(1);
+				break;
+			case RED: 
+				setSpeed(1);
+				break;
+			default:
+				break;
+			}
+		}		
+	}
+
+
+	public boolean isRotateR() {
+		return rotateR;
+	}
+
+	public void setRotateR(boolean rotateR) {
+		this.rotateR = rotateR;
+	}
+
+	public boolean isRotateL() {
+		return rotateL;
+	}
+
+	public void setRotateL(boolean rotateL) {
+		this.rotateL = rotateL;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+}
+

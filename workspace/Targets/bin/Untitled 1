@@ -1,0 +1,9 @@
+Red Car: explosive, pierced, hit, crashed
+Blue Car: Pierced, hit, crashed
+Yellow Car: Explosive, hit, crashed
+Purple Car: hit, crashed
+
+Rifle: pierce
+	Upgrades: Range, Ammo
+Launcher: explosive
+

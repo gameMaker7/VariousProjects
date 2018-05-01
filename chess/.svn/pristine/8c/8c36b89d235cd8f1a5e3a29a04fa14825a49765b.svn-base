@@ -1,0 +1,96 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+public class King extends Piece{
+    King(String color, String abbrev, String piece) {
+        super(color, abbrev, piece);
+        moves[0] = MoveTypes.KingMove;
+        moves[1] = MoveTypes.Castle;
+        canCastle = true;
+    }
+    @Override
+    public King clone(){
+        return new King(this.color, this.abbreviation, this.name);
+    }
+
+    private void KingMove(char currentLetterValue, int currentNumberValue, Board board) {
+        String s;
+        if(currentNumberValue+1 <=8){
+            s = (currentLetterValue) + ((currentNumberValue + 1) + "");
+            AddMove(s, board);
+        }
+        if(currentNumberValue-1 >=1){
+            s = (currentLetterValue) + ((currentNumberValue - 1) + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue+1 <='h'){
+            s = ((char)(currentLetterValue+1)) + (currentNumberValue + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue-1 >='a'){
+            s = ((char)(currentLetterValue-1)) + (currentNumberValue + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue+1 <='h' && currentNumberValue-1 >=1){
+            s = ((char)(currentLetterValue+1)) + ((currentNumberValue - 1) + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue-1 >='a' && currentNumberValue+1 <=8){
+            s = ((char)(currentLetterValue-1)) + ((currentNumberValue + 1) + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue+1 <='h' && currentNumberValue+1 <=8){
+            s = ((char)(currentLetterValue+1)) + ((currentNumberValue + 1) + "");
+            AddMove(s, board);
+        }
+        if(currentLetterValue-1 >='a' && currentNumberValue-1 >=1){
+            s = ((char)(currentLetterValue-1)) + ((currentNumberValue - 1) + "");
+            AddMove(s, board);
+        }
+    }
+    @Override
+    public Board CreatePossibleMoves(String location, Board board) {
+        char currentLetterValue = location.charAt(0);
+        int currentNumberValue = Integer.valueOf(location.substring(1));
+        KingMove(currentLetterValue, currentNumberValue, board);
+        //KingCastling(currentLetterValue, currentNumberValue, board);
+        return board;
+    }
+
+    private void KingCastling(char currentLetterValue, int currentNumberValue, Board board) {
+        if (!hasMoved) {
+            Piece ltr = board.board.get("a1");
+            if(ltr != null){
+            ltr.CreatePossibleMoves("a1", board);
+                if(CheckPossibleMoves("d1") && ltr.CheckPossibleMoves("d1")){
+                    AddMove("c1", board);
+                    canCastle = true;
+                }
+            }
+            Piece rtr = board.board.get("h1");
+            if(rtr != null){
+                rtr.CreatePossibleMoves("f1", board);
+                if(CheckPossibleMoves("f1") && rtr.CheckPossibleMoves("f1")){
+                    AddMove("g1", board);
+                    canCastle = true;
+                }
+            }
+            Piece lbr = board.board.get("a8");
+            if(lbr != null){
+                lbr.CreatePossibleMoves("a8", board);
+                if(CheckPossibleMoves("d8") && lbr.CheckPossibleMoves("d8")){
+                    AddMove("c8", board);
+                    canCastle = true;
+                }
+            }
+            Piece rbr = board.board.get("h8");
+            if(rbr != null){
+                rbr.CreatePossibleMoves("h8", board);
+                if(CheckPossibleMoves("f8") && rbr.CheckPossibleMoves("f8")){
+                    AddMove("g8", board);
+                    canCastle = true;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+package Setup;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+import Group.Hero;
+import Group.Party;
+import Items.Items;
+import Items.Shop;
+import Items.Store;
+
+public class Save {
+	static FileWriter save;
+
+	public static void saveShop(Store shop){
+		try{
+		save.write(shop.length()+ "\n");
+		for(Items b: shop.getList()){
+			save.write(b.getName() + "\n");
+			save.write(b.getType() + "\n");
+			save.write(b.getRank() + "\n");
+			save.write(b.getValue() + "\n");
+			save.write(b.getWieght() + "\n");	
+			}
+		}catch(IOException e){
+			
+		}
+	}
+
+		public static void saveName(Party party, Store shop){
+			try{
+				save = new FileWriter("RPG Game.txt");
+				save.write(party.heroes.length()+ "\n");
+				for(Hero a: party.heroes.getList()){
+					save.write(a.getName()+"\n");
+					saveType(a);
+				}
+				saveShop(shop);
+				save.close();
+			}
+			catch(IOException e){
+			}
+		}
+
+		private static void saveType(Hero a) {
+			try{
+				save.write(a.getType()+ "\n");
+				saveLevel(a);
+			}
+			catch(IOException e){
+
+			}
+		}
+
+		private static void saveLevel(Hero a) {
+			try{
+				save.write(a.getRank()+ "\n");
+				saveGold(a);
+			}
+			catch(IOException e){
+
+			}
+		}
+
+		private static void saveGold(Hero a) {
+			try{
+				save.write(a.getGold() + "\n");
+				saveBagOfItems(a);
+			}
+			catch(IOException e){
+
+			}
+		}
+
+		private static void saveBagOfItems(Hero a) {
+			try{
+				for(Items b: a.getBag().getList()){
+					save.write(b.getName() + "\n");
+					save.write(b.getType() + "\n");
+					save.write(b.getRank() + "\n");
+					save.write(b.getValue() + "\n");
+					save.write(b.getWieght() + "\n");
+					save.write(b.isUseable() + "");
+				}
+			}
+			catch(IOException e){
+
+			}
+
+		}
+	}

@@ -1,0 +1,24 @@
+package Quests;
+
+public enum JabarsQuestions {
+	questionOne;
+	public String question(){
+		switch(this){
+		case questionOne:
+			break;
+		default:
+			break;
+		}
+		return null;
+	}
+	public String answer(){
+		switch(this){
+		case questionOne:
+			break;
+		default:
+			break;
+		}
+		return null;
+	}
+}
+

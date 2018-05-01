@@ -1,0 +1,17 @@
+import java.util.HashMap;
+
+/**
+ * Created by Denver on 2/3/2016.
+ */
+public class Board {
+   HashMap<String, Piece> board = new HashMap<>();
+
+   Board(int x, char[] y){
+      for(int i = 1; i <=x; ++i){
+         for(int a = 1; a<=y.length; ++a){
+            String val = "" + y[a-1]+i;
+            board.put(val, null);
+         }
+      }
+   }
+}

@@ -1,0 +1,16 @@
+//OBJConverter
+InputObj ..\Data\OBJs\DanielsScene.obj
+Textures 0
+outputScene ..\Data\Scenes\DanielsScene.scene
+IndexSize 2
+Colors random
+Normals 1
+// game
+Camera_Move_Speed 0.005f
+Light_Position "0.01f,0.0f,0.0f"
+Camera_Initial_Position "30,20,-10"
+Camera_Initial_View "-8.72150993,-2.04459167,-2.18057537"
+
+
+
+

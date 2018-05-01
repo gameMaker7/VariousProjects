@@ -1,0 +1,35 @@
+package Setup;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+import Group.Party;
+import Items.Potion;
+import Items.Store;
+
+public class Save {
+	static FileOutputStream save;
+	static ObjectOutputStream output;
+
+	public static void saveGame(Party party, Store shop, QuestBoard jobs){
+		try{
+			save = new FileOutputStream("RPG Game.txt");	
+			output = new ObjectOutputStream(save);
+			if(party.heroes.length() == 0){
+				System.out.println("pleaase create a hero before save");
+				return;
+			}
+			output.writeObject(party);
+			if(shop.length() == 0){
+				shop.add(new Potion("Potion", true));
+			}
+			output.writeObject(shop);	
+			output.writeObject(jobs);
+			output.close();
+			System.out.println("Save Complete");
+		}
+		catch(IOException e){
+		}
+	}
+}

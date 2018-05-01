@@ -1,0 +1,22 @@
+package recursion;
+
+import java.util.Scanner;
+
+public class something {
+	private static int n;
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter n");
+		int n = input.nextInt();
+		System.out.println(sum(n));
+	}
+
+	private static int sum(int n2) {
+		if(n2 == 1){
+			return 1;
+		}else{
+		return n + sum(n2-1);
+		}
+	}
+}

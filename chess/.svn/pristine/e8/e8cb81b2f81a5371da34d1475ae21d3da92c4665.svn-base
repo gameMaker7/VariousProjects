@@ -1,0 +1,11 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+public class Rook extends Piece {
+    Rook(String color, String abbrev) {
+        super(color, abbrev);
+        moves[0] = MoveTypes.InfiniteLine;
+        moves[1] = MoveTypes.Castle;
+    }
+
+}

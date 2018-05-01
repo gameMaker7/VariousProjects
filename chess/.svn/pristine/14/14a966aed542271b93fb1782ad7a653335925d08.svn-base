@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="385.0">Bishop</node>
+    <node x="591.0" y="0.0">MoveTypes</node>
+    <node x="282.0" y="385.0">Queen</node>
+    <node x="169.25" y="0.0">PieceSkills</node>
+    <node x="-52.0" y="447.0">Tile</node>
+    <node x="-297.0" y="235.0">Point</node>
+    <node x="101.0" y="385.0">Pawn</node>
+    <node x="284.0" y="450.5">Board</node>
+    <node x="381.0" y="385.0">King</node>
+    <node x="140.25" y="165.0">Piece</node>
+    <node x="467.0" y="385.0">Knight</node>
+    <node x="192.0" y="385.0">Rook</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Rook" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="227.0" y="365.0" />
+      <point x="251.91666666666666" y="365.0" />
+      <point x="-22.333333333333343" y="85.0" />
+    </edge>
+    <edge source="Tile" target="Piece">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Board" target="Piece">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Pawn" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="136.5" y="365.0" />
+      <point x="207.25" y="365.0" />
+      <point x="-67.0" y="85.0" />
+    </edge>
+    <edge source="Tile" target="Point">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Piece" target="PieceSkills">
+      <point x="0.0" y="-85.0" />
+      <point x="0.0" y="57.5" />
+    </edge>
+    <edge source="Piece" target="Point">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Queen" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="321.5" y="365.0" />
+      <point x="296.5833333333333" y="365.0" />
+      <point x="22.333333333333314" y="85.0" />
+    </edge>
+    <edge source="Bishop" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="40.5" y="355.0" />
+      <point x="162.58333333333334" y="355.0" />
+      <point x="-111.66666666666666" y="85.0" />
+    </edge>
+    <edge source="Knight" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="506.5" y="355.0" />
+      <point x="385.91666666666663" y="355.0" />
+      <point x="111.66666666666663" y="85.0" />
+    </edge>
+    <edge source="Board" target="Tile">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Piece" target="MoveTypes">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="King" target="Piece">
+      <point x="0.0" y="-17.0" />
+      <point x="414.0" y="365.0" />
+      <point x="341.25" y="365.0" />
+      <point x="67.0" y="85.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="223.5" y="333.5" />
+  <SelectedNodes>
+    <node>Point</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

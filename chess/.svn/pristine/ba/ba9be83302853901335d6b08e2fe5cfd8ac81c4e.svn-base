@@ -1,0 +1,134 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Denver on 2/3/2016.
+ */
+
+public class Piece{
+    MoveTypes[] moves = new MoveTypes[3];
+    String color;
+    String abbreviation;
+    ArrayList<String> moveSet = new ArrayList<>();
+    boolean hasMoved = false;
+    Piece(String color, String abbrev){
+        this.color = color;
+        this.abbreviation = abbrev;
+    }
+
+    public void CreatePossibleMoves(String location, Board board){
+        char currentLetterValue = location.charAt(0);
+        int currentNumberValue = Integer.valueOf(location.substring(1));
+        for (int i = 0; i < moves.length; ++i){
+            switch (moves[i]){
+                case PawnMove:
+                    if(color == "White")
+                    {
+                        String s = "" + currentLetterValue+(currentNumberValue+1);
+                        moveSet.add(s);
+                    }
+                    if(color == "Black")
+                    {
+                        String s = "" + currentLetterValue+(currentNumberValue-1);
+                        moveSet.add(s);
+                    }
+                     break;
+                case KingMove:
+                    moveSet.add((currentLetterValue)+(currentNumberValue+1)+"");
+                    moveSet.add((currentLetterValue)+(currentNumberValue-1)+"");
+                    moveSet.add((currentLetterValue+1)+(currentNumberValue)+"");
+                    moveSet.add((currentLetterValue-1)+(currentNumberValue)+"");
+                    moveSet.add((currentLetterValue+1)+(currentNumberValue+1)+"");
+                    moveSet.add((currentLetterValue-1)+(currentNumberValue+1)+"");
+                    moveSet.add((currentLetterValue+1)+(currentNumberValue-1)+"");
+                    moveSet.add((currentLetterValue-1)+(currentNumberValue-1)+"");
+                   break;
+                case InfiniteDiagonal:
+
+                    break;
+                case InfiniteLine:
+                    // vertical
+                    int tmp = currentNumberValue;
+                    while (tmp <= 8) {
+                        Piece p = board.board.get((currentLetterValue + tmp));
+                        if(p != null){
+                            if(color == p.color){
+                                break;
+                            }else{
+                                moveSet.add((currentLetterValue + tmp)+"");
+                                break;
+                            }
+                        }
+                        moveSet.add("" + currentLetterValue + tmp);
+                        ++tmp;
+                    }
+                    tmp = currentNumberValue;
+                    while (tmp >= 1) {
+                        Piece p = board.board.get((currentLetterValue + tmp));
+                        if(p != null){
+                            if(color == p.color){
+                                break;
+                            }else{
+                                moveSet.add((currentLetterValue + tmp)+"");
+                                break;
+                            }
+                        }
+                        moveSet.add("" + currentLetterValue + tmp);
+                        --tmp;
+                    }
+                    // horizontal
+                    char tmpc = currentLetterValue;
+                    while (tmp <= 'h') {
+                        Piece p = board.board.get((tmp + currentNumberValue));
+                        if(p != null){
+                            if(color == p.color){
+                                break;
+                            }else{
+                                moveSet.add((tmp + currentNumberValue)+"");
+                                break;
+                            }
+                        }
+                        moveSet.add("" + tmp + currentNumberValue);
+                        ++tmp;
+                    }
+                    tmp = currentNumberValue;
+                    while (tmp >= 'a') {
+                        Piece p = board.board.get((tmp + currentNumberValue));
+                        if(p != null){
+                            if(color == p.color){
+                                break;
+                            }else{
+                                moveSet.add((tmp + currentNumberValue)+"");
+                                break;
+                            }
+                        }
+                        moveSet.add("" + tmp + currentNumberValue);
+                        --tmp;
+                    }
+                    break;
+                case KnightFar:
+                   break;
+                case KnightWide:
+                    break;
+                case PawnDouble:
+                    Piece p = board.board.get((currentLetterValue + currentNumberValue+1));
+                    if(p != null){
+                        break;
+                    }
+                    break;
+                case PawnKill:
+                    break;
+                case Castle:
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    public boolean CheckPossibleMoves(String location2) {
+        for (int i = 0; i < moveSet.size(); ++i){
+            if(moveSet.get(i) == location2) return true;
+        }
+        return false;
+    }
+}

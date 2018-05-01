@@ -1,0 +1,59 @@
+/**
+ * Created by Denver on 2/5/2016.
+ */
+public class Bishop extends Piece {
+    Bishop(String color, String abbrev) {
+        super(color, abbrev);
+        moves[0] = MoveTypes.InfiniteDiagonal;
+    }
+    private void DiagonalMove(char currentLetterValue, int currentNumberValue, Board board) {
+        String s;
+        int tmp = currentNumberValue;
+        int tmpc = currentLetterValue;
+        while (tmp <= 8 && tmpc <= 'h') {
+            ++tmp;
+            ++tmpc;
+            s = (char)tmpc + (tmp+"");
+            if(!AddMove(s, board)){
+                break;
+            }
+        }
+        tmp = currentNumberValue;
+        tmpc = currentLetterValue;
+        while (tmp <= 8 && tmpc >= 'a') {
+            ++tmp;
+            --tmpc;
+            s = (char)tmpc + (tmp+"");
+            if(!AddMove(s, board)){
+                break;
+            }
+        }
+        tmp = currentNumberValue;
+        tmpc = currentLetterValue;
+        while (tmp >= 1 && tmpc <= 'h') {
+            --tmp;
+            ++tmpc;
+            s = (char)tmpc + (tmp+"");
+            if(!AddMove(s, board)){
+                break;
+            }
+        }
+        tmp = currentNumberValue;
+        tmpc = currentLetterValue;
+        while (tmp >= 1 && tmpc >= 'a') {
+            --tmp;
+            --tmpc;
+            s = (char)tmpc + (tmp+"");
+            if(!AddMove(s, board)){
+                break;
+            }
+        }
+    }
+    @Override
+    public Board CreatePossibleMoves(String location, Board board) {
+        char currentLetterValue = location.charAt(0);
+        int currentNumberValue = Integer.valueOf(location.substring(1));
+        DiagonalMove(currentLetterValue, currentNumberValue, board);
+        return board;
+    }
+}
